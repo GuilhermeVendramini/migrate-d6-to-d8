@@ -1,4 +1,6 @@
-Obs.: Caso a migração seja feita apartir do SQL, colocar o seguinte código no settings.php, informando o database que será migrado:
+This module is a migration example from Drupal 6 to Drupal 8.
+
+Put the following code in your settings.php:
 
 // Note the key 'migrate' here is important.
 $databases['migrate']['default'] = array (
