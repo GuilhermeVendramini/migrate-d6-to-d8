@@ -1,0 +1,12 @@
+id: cnc_tags
+label: Tags
+migration_group: taxonomy_term
+source:
+  plugin: cnc_tags
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+    plugin: default_value
+    default_value: tags
+  name: name

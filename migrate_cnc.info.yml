@@ -1,0 +1,9 @@
+name: migrate_cnc
+type: module
+description: Migrate CNC
+core: 8.x
+package: Custom
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools

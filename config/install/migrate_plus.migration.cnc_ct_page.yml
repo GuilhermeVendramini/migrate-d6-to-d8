@@ -1,0 +1,24 @@
+# Migration configuration for beer content.
+id: cnc_ct_page
+label: Content Type Page
+migration_group: content_type
+source:
+  plugin: cnc_ct_page
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  'body/value': body
+  field_tags:
+    plugin: migration
+    migration: cnc_tags
+    source: tags
+migration_dependencies:
+  required:
+    - cnc_tags
