@@ -5,6 +5,7 @@ namespace Drupal\migrate_cnc\Plugin\migrate\source;
 use Drupal\Core\Database\Database;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
+use Drupal\node\Plugin\migrate\source\d6\Node;
 
 /**
  * Source plugin for the cnc_tags.
@@ -13,59 +14,16 @@ use Drupal\migrate\Row;
  *   id = "cnc_ct_page"
  * )
  */
-class CncCtPage extends SqlBase {
+class CncCtPage extends Node {
 
   /**
    * {@inheritdoc}
-   */
-  public function query() {
-
-    $query = $this->select('node', 'n')
-      ->fields('n', ['nid', 'title']);
-    $query->join('node_revisions', 'nr', 'nr.nid = n.nid');
-    $query->fields('nr', ['body']);
-    $query->condition('n.type', 'page');
-
-    return $query;
-  }
-  
-  /**
-   * {@inheritdoc}
-   */
-  public function fields() {
-    $fields = [
-      'nid' => $this->t('NID'),
-      'title' => $this->t('Title'),
-      'body' => $this->t('Body'),
-      /**
-       * Tags não é retornado na função "query" acima
-       * seu valor é recupera na função prepareRow
-      */
-      'tags' => $this->t('Tags'),
-    ];
-
-    return $fields;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getIds() {
-    return [
-      'nid' => [
-        'type' => 'integer',
-        'alias' => 'n',
-      ],
-    ];
-  }
-
-    /**
-   * {@inheritdoc}
-   */
+  */
   public function prepareRow(Row $row) {
     /**
      * Recupera os termos atrelados ao node
      */
+    print_r($row->getSourceProperty('nid'));
     $query = $this->select('term_data', 'td')
                  ->fields('td', ['tid']);
 
@@ -73,7 +31,7 @@ class CncCtPage extends SqlBase {
     $query ->condition('tn.nid', $row->getSourceProperty('nid'));
     $query ->condition('td.vid', 6);
     $terms = $query ->execute()->fetchCol();
-
+    print_r($terms);
     //Atribui os termos ao campo tags
     $row->setSourceProperty('tags', $terms);
 
