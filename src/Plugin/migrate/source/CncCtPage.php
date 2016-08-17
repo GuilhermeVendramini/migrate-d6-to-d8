@@ -23,17 +23,27 @@ class CncCtPage extends Node {
     /**
      * Recupera os termos atrelados ao node
      */
-    print_r($row->getSourceProperty('nid'));
-    $query = $this->select('term_data', 'td')
-                 ->fields('td', ['tid']);
 
+    $query = $this->select('term_data', 'td')->fields('td', ['tid']);
     $query ->join('term_node', 'tn', 'tn.tid = td.tid');
     $query ->condition('tn.nid', $row->getSourceProperty('nid'));
     $query ->condition('td.vid', 6);
     $terms = $query ->execute()->fetchCol();
-    print_r($terms);
+
     //Atribui os termos ao campo tags
     $row->setSourceProperty('tags', $terms);
+
+
+    /**
+     * Recupera a imagem atrela ao node
+     */
+
+    $query = $this->select('content_field_page_arquivo', 'f')->fields('f', ['field_page_arquivo_fid']);
+    $query ->condition('f.nid', $row->getSourceProperty('nid'));
+    $fid = $query ->execute()->fetchCol();
+
+    //Atribui ao campo de imagem o arquivo
+    $row->setSourceProperty('image_fid', $fid );
 
     return parent::prepareRow($row);
   }

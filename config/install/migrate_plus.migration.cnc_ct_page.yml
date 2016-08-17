@@ -32,8 +32,14 @@ process:
     plugin: migration
     migration: cnc_tags
     source: tags
+  field_image:
+    plugin: migration
+    migration: cnc_files
+    source: image_fid
 destination:
   plugin: entity:node
 migration_dependencies:
   required:
     - cnc_tags
+    - cnc_image
+    - cnc_files
