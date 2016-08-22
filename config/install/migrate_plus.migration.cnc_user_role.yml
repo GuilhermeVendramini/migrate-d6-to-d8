@@ -1,0 +1,19 @@
+id: cnc_user_role
+label: User roles
+source:
+  plugin: cnc_user_role
+process:
+  id:
+    -
+      plugin: machine_name
+      source: name
+    -
+      plugin: dedupe_entity
+      entity_type: user_role
+      field: id
+      length: 32
+    -
+      plugin: user_update_8002
+  label: name
+destination:
+  plugin: entity:user_role
