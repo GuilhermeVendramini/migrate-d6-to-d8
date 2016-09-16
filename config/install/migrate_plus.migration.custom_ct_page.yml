@@ -41,5 +41,4 @@ destination:
 migration_dependencies:
   required:
     - custom_tags
-    - custom_image
     - custom_files
