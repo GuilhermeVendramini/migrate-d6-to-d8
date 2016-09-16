@@ -1,7 +1,7 @@
-id: cnc_user
+id: custom_user
 label: User accounts
 source:
-  plugin: cnc_user
+  plugin: custom_user
 process:
   uid: uid
   name: name
@@ -18,11 +18,11 @@ process:
   init: init
   roles:
     plugin: migration
-    migration: cnc_user_role
+    migration: custom_user_role
     source: roles
 destination:
   plugin: entity:user
   md5_passwords: true
 migration_dependencies:
   required:
-    - cnc_user_role
+    - custom_user_role

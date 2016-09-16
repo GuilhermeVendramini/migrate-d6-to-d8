@@ -1,9 +1,9 @@
 # Every migration that saves into {file_managed} must have the d6_file
 # migration as an optional dependency to ensure d6_file runs first.
-id: cnc_files
+id: custom_files
 label: Files
 source:
-  plugin: cnc_files
+  plugin: custom_files
 process:
   fid: fid
   filename: filename

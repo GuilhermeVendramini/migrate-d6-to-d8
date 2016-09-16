@@ -1,8 +1,8 @@
-id: cnc_ct_page
+id: custom_ct_page
 label: Content Type Page
 deriver: Drupal\node\Plugin\migrate\D6NodeDeriver
 source:
-  plugin: cnc_ct_page
+  plugin: custom_ct_page
 process:
   nid: tnid
   vid: vid
@@ -30,16 +30,16 @@ process:
   revision_timestamp: timestamp
   field_tags:
     plugin: migration
-    migration: cnc_tags
+    migration: custom_tags
     source: tags
   field_image:
     plugin: migration
-    migration: cnc_files
+    migration: custom_files
     source: image_fid
 destination:
   plugin: entity:node
 migration_dependencies:
   required:
-    - cnc_tags
-    - cnc_image
-    - cnc_files
+    - custom_tags
+    - custom_image
+    - custom_files

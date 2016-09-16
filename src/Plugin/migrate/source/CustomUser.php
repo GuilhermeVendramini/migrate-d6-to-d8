@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\migrate_cnc\Plugin\migrate\source;
+namespace Drupal\migrate_custom\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
@@ -9,10 +9,10 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  * Drupal 6 user source from database.
  *
  * @MigrateSource(
- *   id = "cnc_user"
+ *   id = "custom_user"
  * )
  */
-class CncUser extends DrupalSqlBase {
+class customUser extends DrupalSqlBase {
 
   /**
    * {@inheritdoc}

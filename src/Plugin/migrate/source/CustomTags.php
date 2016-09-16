@@ -1,18 +1,18 @@
 <?php
 
-namespace Drupal\migrate_cnc\Plugin\migrate\source;
+namespace Drupal\migrate_custom\Plugin\migrate\source;
 
 use Drupal\Core\Database\Database;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
 /**
- * Source plugin for the cnc_tags.
+ * Source plugin for the custom_tags.
  *
  * @MigrateSource(
- *   id = "cnc_tags"
+ *   id = "custom_tags"
  * )
  */
-class CncTags extends SqlBase {
+class customTags extends SqlBase {
 
   /**
    * {@inheritdoc}

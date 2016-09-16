@@ -1,14 +1,14 @@
 {
-  "name": "drupal/migrate_cnc",
+  "name": "drupal/migrate_custom",
   "type": "drupal-module",
-  "description": "Migrate CNC",
+  "description": "Migrate custom",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/migrate_cnc",
+  "homepage": "https://www.drupal.org/project/migrate_custom",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://www.drupal.org/project/issues/migrate_cnc",
-    "source": "http://cgit.drupalcode.org/migrate_cnc"
+    "issues": "https://www.drupal.org/project/issues/migrate_custom",
+    "source": "http://cgit.drupalcode.org/migrate_custom"
   },
   "require": { }
 }

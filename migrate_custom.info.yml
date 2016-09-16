@@ -1,6 +1,6 @@
-name: migrate_cnc
+name: migrate_custom
 type: module
-description: Migrate CNC
+description: Migrate custom
 core: 8.x
 package: Custom
 dependencies:

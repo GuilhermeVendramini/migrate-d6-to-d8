@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\migrate_cnc\Plugin\migrate\source;
+namespace Drupal\migrate_custom\Plugin\migrate\source;
 
 use Drupal\Core\Database\Database;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
@@ -8,13 +8,13 @@ use Drupal\migrate\Row;
 use Drupal\node\Plugin\migrate\source\d6\Node;
 
 /**
- * Source plugin for the cnc_tags.
+ * Source plugin for the custom_tags.
  *
  * @MigrateSource(
- *   id = "cnc_ct_page"
+ *   id = "custom_ct_page"
  * )
  */
-class CncCtPage extends Node {
+class customCtPage extends Node {
 
   /**
    * {@inheritdoc}

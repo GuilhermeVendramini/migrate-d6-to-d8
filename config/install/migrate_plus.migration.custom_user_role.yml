@@ -1,7 +1,7 @@
-id: cnc_user_role
+id: custom_user_role
 label: User roles
 source:
-  plugin: cnc_user_role
+  plugin: custom_user_role
 process:
   id:
     -

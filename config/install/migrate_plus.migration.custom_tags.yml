@@ -1,8 +1,8 @@
-id: cnc_tags
+id: custom_tags
 label: Tags
 migration_group: taxonomy_term
 source:
-  plugin: cnc_tags
+  plugin: custom_tags
 destination:
   plugin: entity:taxonomy_term
 process:
